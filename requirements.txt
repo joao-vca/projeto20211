@@ -1,3 +1,1 @@
-ansi==0.2.0
-beautifulsoup4==4.9.3
 errbot==6.1.8
