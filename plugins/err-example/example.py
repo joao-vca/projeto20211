@@ -9,10 +9,8 @@ class Example(BotPlugin):
     """
 
     @botcmd  # flags a command
-    def tryme(self, msg, args):  # a command callable with !tryme
+    def bomdia(self, msg, args):
         """
-        Execute to check if Errbot responds to command.
-        Feel free to tweak me to experiment with Errbot.
-        You can find me in your init directory in the subdirectory plugins.
+        Responde educadamente ao solicitante.
         """
-        return "It *works* !"  # This string format is markdown.
+        return "fala aí rapaziada"  # This string format is markdown.
