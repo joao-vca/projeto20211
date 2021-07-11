@@ -7,13 +7,6 @@
     {
       "type": "python",
       "request": "launch",
-      "name": "VSCode: Errbot",
-      "program": "venv/bin/errbot",
-      "console": "integratedTerminal"
-    },
-    {
-      "type": "python",
-      "request": "launch",
       "name": "Gitpod: Errbot",
       "program": "/workspace/.pip-modules/bin/errbot",
       "console": "integratedTerminal"
