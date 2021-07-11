@@ -1,6 +1,7 @@
 from errbot import BotPlugin, botcmd
 from random import randint
 
+
 class Dados(BotPlugin):
     """
     Rolar os dados para suporte a jogos de RPG de mesa
@@ -23,8 +24,10 @@ class Dados(BotPlugin):
             yield "Por favor, informe dados e faces como números inteiros"
             yield "na seguinte forma:"
             yield "!rolar <dados> <faces>"
-
-        for parada in range(1, dados + 1):
-            dado = randint(1, faces)
-            yield "Dado " + str(parada) + " = " + str(dado)
-            
+        else:
+            somatorio = 0
+            for parada in range(1, dados + 1):
+                dado = randint(1, faces)
+                somatorio = somatorio + dado
+                yield "Dado " + str(parada) + " = " + str(dado)
+            yield "Somatório = " + str(somatorio)
