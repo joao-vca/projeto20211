@@ -1,10 +1,14 @@
 # Projeto da disciplina de Arquitetura de Redes de Computadores - 11/07/2021
-Projeto de chatbot educativo para a disciplina de ARC.
+Projeto de chatbot para a disciplina de ARC.
 
-# Ideia 1: Explicando Python pelo próprio chatbot
-A ideia inicial do projeto foi explicar as principais funções e ferramentas da linguagem Python através de comandos simples. O chatbot servirá como uma espécie de guia rápido de Python.
+# Idea 2: Chatbot de suporte técnico para produtos.
+Estudando e trabalhando com marketing e produto, percebi que o suporte é um dos 3 pilares fundamentais para qualquer empresa, além de produto e canais de venda. Percebi que quanto mais canais eficientes para suporte, melhor.
 
-# Para o futuro
-No futuro, caso seja possível, o chatbot terá a função de escrever um código base para uma ideia/proposta colocada por um usuário.
+Trabalhando no P&D de câmeras Wi-Fi, vi a possibilidade de criar mais um canal de suporte além do chatbot disponível no site: um chatbot que atendesse também via Discord.
 
-# Idea 2: Chatbot de suporte para produtos.
+# Funcionamento
+Através de WorkFlows, o chabot responde e soluciona os principais problemas de uma câmera Wi-Fi:
+
+1. Problema de conexão
+2. Problema de XPTO
+3. etc.
