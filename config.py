@@ -6,7 +6,7 @@ BACKEND = 'Discord'
 BOT_IDENTITY = {
  'token' : environ.get('DISCORD_TOKEN')
 }
-BOT_ADMINS = (environ.get('BOT_ANDMIN'), )
+BOT_ADMINS = (environ.get('BOT_ADMIN'), )
 BOT_PREFIX = '!'
 BOT_PREFIX_OPTIONAL_ON_CHAT = True
 
