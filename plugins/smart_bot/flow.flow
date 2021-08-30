@@ -1,0 +1,9 @@
+[Core]
+Name = AtendimentoFlow
+Module = smart_flow
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Chatbot para a disciplina de ARC.

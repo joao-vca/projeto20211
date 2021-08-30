@@ -1,9 +1,0 @@
-[Core]
-Name = FLOW
-Module = FLOW
-
-[Documentation]
-Description = Chatbot para a disciplina de ARC.
-
-[Python]
-Version = 3.8.11

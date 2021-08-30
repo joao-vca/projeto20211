@@ -1,0 +1,9 @@
+[Core]
+Name = Atendimento
+Module = smart_bot
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Chatbot para a disciplina de ARC.
