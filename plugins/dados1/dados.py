@@ -1,14 +1,11 @@
-from errbot import BotPlugin, botcmd
-from random import randint
 
-
-class Dados(BotPlugin):
+    class Dados(BotPlugin):
     """
     Rolar os dados para suporte a jogos de RPG de mesa
     Tem o rolar de n dados com n faces, entre outros comandos.
     """
 
-    @botcmd(split_args_with=' ')
+   @botcmd(split_args_with=' ')
     def rolar(self, msg, args):
         """
         Informar quantos dados e faces.
