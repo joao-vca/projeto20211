@@ -6,7 +6,7 @@ problemas = None
 
 class Atendimento(BotPlugin):
     @botcmd
-    def ajudacamera(self, msg, args):
+    def começar(self, msg, args):
         """
         Começa o atendimento perguntando o nome do cliente.
         """
