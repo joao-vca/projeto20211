@@ -22,45 +22,46 @@ class Atendimento(BotPlugin):
         global nome
         nome = match.string.capitalize()
         yield "Olá, " + nome + "! Vamos começar o nosso atendimento."
+        yield "Para começar, diga o modelo da sua câmera (use os números para digitar):"
+        yield "A iM3"
+        yield "B iM4"
+        yield "C iM5 S"
 
-    @botmatch(r'.*$', flow_Only=True)
+    @botmatch(r'.*$', flow_only=True)
     def modelocam(self, msg, match):
         """
         Pergunta o modelo da câmera e salva.
         """
         global modelo
         modelo = match.string.capitalize()
-        yield "Para começar, comece dizendo o modelo da sua câmera:"
-        yield "iM3"
-        yield "iM4"
-        yield "iM5 S"
     
-        if modelo == "iM3":
+        if modelo == "A":
             yield "OK, sua câmera é uma iM3, iM3 Duo, iM3 Black ou iM3 c/micro-SD."
         
-        if modelo == "iM4":
+        if modelo == "B":
             yield "OK, sua câmera é uma iM4 ou iM4 c/micro-SD."
 
-        if modelo == "iM5 S":
+        if modelo == "C":
             yield "OK, sua câmera é uma iM5 S ou iM5 S c/micro-SD."
-    
-    @botmatch(r'.*$', flow_Only=True)
+
+        yield "Certo. Qual problema você está enfrentando?"
+        yield "A Não conecta"
+        yield "B Desvincular câmera"
+        yield "C Ajuda com compartilhamento"
+
+    @botmatch(r'.*$', flow_only=True)
     def problemas(self, msg, match):
         """
         Qual problema o cliente está enfrentando?
         """
         global problema
         problema = match.string.capitalize()
-        yield "Certo. Qual problema você está enfrentando?"
-        yield "(1) Não conecta"
-        yield "(2) Desvincular câmera"
-        yield "(3) Ajuda com compartilhamento"
 
-        if problema == "(1) Não conecta":
+        if problema == "A":
             yield "OK"
         
-        if problema == "(2) Desvincular câmera":
+        if problema == "B":
             yield "OK"
 
-        if problema == "(3) Ajuda com compartilhamento":
+        if problema == "C":
             yield "OK"
