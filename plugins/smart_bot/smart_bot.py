@@ -22,7 +22,7 @@ class Atendimento(BotPlugin):
         global nome
         nome = match.string.capitalize()
         yield "Olá, " + nome + "! Vamos começar o nosso atendimento."
-        yield "Para começar, diga o modelo da sua câmera (use os números para digitar):"
+        yield "Primeira coisa: qual é o modelo da sua câmera? (digite a letra inicial para cada opção)"
         yield "A iM3"
         yield "B iM4"
         yield "C iM5 S"
@@ -34,26 +34,40 @@ class Atendimento(BotPlugin):
         """
         global modelo
         modelo = match.string.capitalize()
-    
-        if modelo == "A":
-            yield "OK, sua câmera é uma iM3, iM3 Duo, iM3 Black ou iM3 c/micro-SD."
+        respostas_aceitaveis = ["A", "B", "C"]
+        respa = "OK, sua câmera é uma iM3, iM3 Duo, iM3 Black ou iM3 c/micro-SD."
+        respb = "OK, sua câmera é uma iM4 ou iM4 c/micro-SD."
+        respc = "OK, sua câmera é uma iM5 S ou iM5 S c/micro-SD."
+
+        while(respostas_aceitaveis == True):
+            try:
+                if modelo == "A":
+                    yield respa
+                else:
+                    pass  
+                if modelo == "B":
+                    yield respb
+                else:
+                    pass
+                if modelo == "C":
+                    yield respc
+                else:
+                    pass
+            except:
+                pass
+        else:
+            yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
+            pass
         
-        if modelo == "B":
-            yield "OK, sua câmera é uma iM4 ou iM4 c/micro-SD."
-
-        if modelo == "C":
-            yield "OK, sua câmera é uma iM5 S ou iM5 S c/micro-SD."
-
-        yield "Certo. Qual problema você está enfrentando?"
-        yield "A Não conecta"
-        yield "B Desvincular câmera"
-        yield "C Ajuda com compartilhamento"
-
     @botmatch(r'.*$', flow_only=True)
     def problemas(self, msg, match):
         """
         Qual problema o cliente está enfrentando?
         """
+        yield "Certo. Qual problema você está enfrentando? (digite a letra inicial para cada opção)"
+        yield "A Não conecta"
+        yield "B Desvincular câmera"
+        yield "C Ajuda com compartilhamento"
         global problema
         problema = match.string.capitalize()
 
