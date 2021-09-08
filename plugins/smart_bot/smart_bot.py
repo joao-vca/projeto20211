@@ -34,31 +34,23 @@ class Atendimento(BotPlugin):
         """
         global modelo
         modelo = match.string.capitalize()
-        respostas_aceitaveis = ["A", "B", "C"]
         respa = "OK, sua câmera é uma iM3, iM3 Duo, iM3 Black ou iM3 c/micro-SD."
         respb = "OK, sua câmera é uma iM4 ou iM4 c/micro-SD."
         respc = "OK, sua câmera é uma iM5 S ou iM5 S c/micro-SD."
 
-        while(respostas_aceitaveis == True):
-            try:
-                if modelo == "A":
-                    yield respa
-                else:
-                    pass  
-                if modelo == "B":
-                    yield respb
-                else:
-                    pass
-                if modelo == "C":
-                    yield respc
-                else:
-                    pass
-            except:
-                pass
+        if modelo == "A":
+            yield respa
+ 
+        if modelo == "B":
+            yield respb
+
+        if modelo == "C":
+            yield respc           
+        
         else:
             yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
-            pass
-        
+            self.nomear(msg, match)
+
     @botmatch(r'.*$', flow_only=True)
     def problemas(self, msg, match):
         """
