@@ -2,13 +2,17 @@
 Projeto de chatbot para a disciplina de ARC.
 
 # Chatbot de suporte técnico para produtos.
-Estudando e trabalhando com marketing e produto, percebi que o suporte é um dos 3 pilares fundamentais para qualquer empresa, além de produto e canais de venda. Percebi que quanto mais canais eficientes para suporte, melhor.
+O suporte é um dos 3 pilares fundamentais para qualquer negócio, além de produto e canais de venda. É fato que quanto mais canais eficientes para suporte, melhor e mais bem sucedida será o empreendimento.
 
-Trabalhando no P&D de câmeras Wi-Fi, vi a possibilidade de criar mais um canal de suporte além do chatbot disponível no site: um chatbot que atendesse também via Discord.
+Trabalhando no P&D de câmeras Wi-Fi, vi a possibilidade de criar mais um canal de suporte além do chatbot disponível no site: um chatbot que atendesse também via Discord, e repassasse informações fundamentais para o atendente, que resolveria o problema no 1-1.
 
 # Funcionamento
-Através de WorkFlows, o chabot responde e soluciona os principais problemas de uma câmera Wi-Fi:
+Através de WorkFlows, o chabot responde e soluciona os principais problemas de uma câmera Wi-Fi.
 
-1. Problema de conexão
-2. Problema de XPTO
-3. etc.
+1. Primeiro passo: perguntar o nome;
+2. Segundo passo: perguntar o modelo da câmera;
+3. Terceiro passo: perguntar o problema e repassar para o atendente.
+
+# Mais Informações
+Este é um código em desenvolvimento. Futuramente será desenvolvido em outra plataforma e terá seus bugs resolvidos.
+Para manter contato comigo, fale comigo no meu Instagram: *@joaovitorclasen.*
