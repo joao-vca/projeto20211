@@ -1,8 +1,9 @@
 from errbot import BotPlugin, botcmd, botmatch
+import time
 
 nome = None
-modelocam = None
-problemas = None
+modelo = None
+problema = None
 
 class Atendimento(BotPlugin):
     @botcmd
@@ -53,21 +54,11 @@ class Atendimento(BotPlugin):
             modelo = "iM5 S"
         
         yield "Certo. Qual problema você está enfrentando? (digite a letra inicial para cada opção)"
-        yield "A Não conecta"
-        yield "B Desvincular câmera"
-        yield "C Ajuda com compartilhamento"
+        yield "D Não conecta"
+        yield "E Desvincular câmera"
+        yield "F Ajuda com compartilhamento"
 
-    """
-    @botmatch(r'^[D-Z|0-9|a-z]$', flow_only=True)
-    def modelocam_alt(self, msg, match):
-        
-        Pergunta o modelo da câmera e salva.
-        
-
-        yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
-    """
-
-    @botmatch(r'^(A|B|C)$', flow_only=True)
+    @botmatch(r'^(D|E|F)$', flow_only=True)
     def problemas(self, msg, match):
         """
         Qual problema o cliente está enfrentando?
@@ -76,31 +67,23 @@ class Atendimento(BotPlugin):
         global problema
         problema = match.string.capitalize()
 
-        if problema == "A":
-            yield "Ok, sua câmera não está conectando."
+        if problema == "D":
+            yield "Ok, sua câmera não está conectando. Só um instante..."
             problema = "Não conecta"
         
-        if problema == "B":
-            yield "Ok, você está com problemas para desvincular a sua câmera."
+        if problema == "E":
+            yield "Ok, você está com problemas para desvincular a sua câmera. Só um instante..."
             problema = "Desvincular câmera"
 
-        if problema == "C":
-            yield "Ok, você está com problemas para compartilhar sua câmera."
+        if problema == "F":
+            yield "Ok, você está com problemas para compartilhar sua câmera. Só um instante..."
             problema = "Ajuda com compartilhamento"
 
-        yield "Ok, esses são os dados que nós temos:"
-        yield "Seu nome:" + nome
-        yield "Sua câmera:" + modelo
-        yield "O problema que você está enfrentando:" + problema
+        time.sleep(10)
+
+        yield "Estes são os dados que nós temos:"
+        yield "Seu nome: " + nome
+        yield "Sua câmera: " + modelo
+        yield "O problema que você está enfrentando: " + problema
         yield "Por favor, aguarde um pouco. Em breve um dos nossos atendentes vai te responder."
         yield "Foi um prazer atender você! ;)"
-        
-    """
-    @botmatch(r'^[D-Z|0-9|a-z]$', flow_only=True)
-    def problemas_alt(self, msg, match):
-        
-        Pergunta o modelo da câmera e salva.
-        
-        
-        yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
-    """
