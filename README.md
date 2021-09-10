@@ -15,4 +15,4 @@ Através de WorkFlows, o chabot responde e soluciona os principais problemas de 
 
 # Mais Informações
 Este é um código em desenvolvimento. Futuramente será desenvolvido em outra plataforma e terá seus bugs resolvidos.
-Para manter contato comigo, fale comigo no meu Instagram: *@joaovitorclasen.*
+Para manter contato, fale comigo no meu Instagram: *@joaovitorclasen.*
