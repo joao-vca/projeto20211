@@ -42,17 +42,20 @@ class Atendimento(BotPlugin):
         
         if modelo == "A":
             yield "OK, sua câmera é uma iM3, iM3 Duo, iM3 Black ou iM3 c/micro-SD."
- 
+            modelo = "iM3"
+
         if modelo == "B":
             yield "OK, sua câmera é uma iM4 ou iM4 c/micro-SD."
+            modelo = "iM4"
 
         if modelo == "C":
             yield "OK, sua câmera é uma iM5 S ou iM5 S c/micro-SD."
+            modelo = "iM5 S"
         
         yield "Certo. Qual problema você está enfrentando? (digite a letra inicial para cada opção)"
-        yield "1 Não conecta"
-        yield "2 Desvincular câmera"
-        yield "3 Ajuda com compartilhamento"
+        yield "A Não conecta"
+        yield "B Desvincular câmera"
+        yield "C Ajuda com compartilhamento"
 
     """
     @botmatch(r'^[D-Z|0-9|a-z]$', flow_only=True)
@@ -64,7 +67,7 @@ class Atendimento(BotPlugin):
         yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
     """
 
-    @botmatch(r'^(1|2|3)$', flow_only=True)
+    @botmatch(r'^(A|B|C)$', flow_only=True)
     def problemas(self, msg, match):
         """
         Qual problema o cliente está enfrentando?
@@ -73,15 +76,25 @@ class Atendimento(BotPlugin):
         global problema
         problema = match.string.capitalize()
 
-        if problema == "1":
+        if problema == "A":
             yield "Ok, sua câmera não está conectando."
+            problema = "Não conecta"
         
-        if problema == "2":
+        if problema == "B":
             yield "Ok, você está com problemas para desvincular a sua câmera."
+            problema = "Desvincular câmera"
 
-        if problema == "3":
+        if problema == "C":
             yield "Ok, você está com problemas para compartilhar sua câmera."
+            problema = "Ajuda com compartilhamento"
 
+        yield "Ok, esses são os dados que nós temos:"
+        yield "Seu nome:" + nome
+        yield "Sua câmera:" + modelo
+        yield "O problema que você está enfrentando:" + problema
+        yield "Por favor, aguarde um pouco. Em breve um dos nossos atendentes vai te responder."
+        yield "Foi um prazer atender você! ;)"
+        
     """
     @botmatch(r'^[D-Z|0-9|a-z]$', flow_only=True)
     def problemas_alt(self, msg, match):
@@ -91,16 +104,3 @@ class Atendimento(BotPlugin):
         
         yield "Desculpa, não entendi. Por favor, utilize uma das letras iniciais para continuar o atendimento."
     """
-
-    @botmatch(r'^(1|2|3)$', flow_only=True)
-    def solução(self, msg, match):
-        """
-        Direciona solução para o cliente imprimindo os dados para o atendente.
-        """
-
-        yield "Ok, esses são os dados que nós temos:"
-        yield "Seu nome:" + nome
-        yield "Sua câmera:" + modelocam
-        yield "O problema que você está enfrentando:" + problemas
-        yield "Por favor, aguarde um pouco. Em breve um dos nossos atendentes vai te responder."
-        yield "Foi um prazer atender você! ;)"
