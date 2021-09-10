@@ -7,7 +7,7 @@ O suporte é um dos 3 pilares fundamentais para qualquer negócio, além de prod
 Trabalhando no P&D de câmeras Wi-Fi na Intelbras, vi a possibilidade de criar mais um canal de suporte além do Chatbot disponível no site e no aplicativo: um Chatbot que atendesse também via Discord, e repassasse informações fundamentais para o atendente, que resolveria o problema no 1-1.
 
 # Funcionamento
-Através de WorkFlows, o chabot responde e soluciona os principais problemas de uma câmera Wi-Fi.
+Através de WorkFlows, o Chatbot segue o seguinte passo-a-passo:
 
 1. Primeiro passo: perguntar o nome;
 2. Segundo passo: perguntar o modelo da câmera;
