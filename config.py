@@ -1,7 +1,5 @@
 import logging
 from os import environ
-from dotenv import load_dotenv
-load_dotenv()
 
 BACKEND = 'Discord'
 BOT_IDENTITY = {
